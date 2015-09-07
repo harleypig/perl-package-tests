@@ -19,5 +19,4 @@ plan skip_all => 'Test::CheckDeps required for these tests'
 
 Test::CheckDeps::check_dependencies( 'suggests' );
 
-#BAIL_OUT( 'Missing dependencies' )
-#  if !Test::More->builder->is_passing;
+done_testing();
