@@ -1,5 +1,7 @@
 # https://metacpan.org/pod/Test::ConsistentVersion
 
+# Optional depends: Test::Pod::Content
+
 ## no critic qw( ErrorHandling::RequireCheckingReturnValueOfEval )
 ## no critic qw( Lax::RequireExplicitPackage::ExceptForPragmata )
 ## no critic qw( Modules::RequireExplicitPackage )
@@ -21,5 +23,4 @@ eval { require Test::ConsistentVersion };
 plan skip_all => 'Test::ConsistentVersion required for these tests'
   if $@;
 
-# XXX: Change this to explicitly checking each individual file.
 Test::ConsistentVersion::check_consistent_versions();
