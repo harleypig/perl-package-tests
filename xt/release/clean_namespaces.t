@@ -1,3 +1,5 @@
+# https://metacpan.org/pod/Test::CleanNamespaces
+
 ## no critic qw( ErrorHandling::RequireCheckingReturnValueOfEval )
 ## no critic qw( Lax::RequireExplicitPackage::ExceptForPragmata )
 ## no critic qw( Modules::RequireExplicitPackage )
@@ -6,10 +8,10 @@
 
 BEGIN {
 
-  use Test::Most
+  use Test::Most;
 
-  plan skip_all => 'these tests are for testing by the author'
-    unless $ENV{AUTHOR_TESTING};
+  plan skip_all => 'these tests are for release candidate testing'
+    unless $ENV{RELEASE_TESTING};
 
 }
 

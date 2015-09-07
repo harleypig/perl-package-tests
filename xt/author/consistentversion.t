@@ -1,3 +1,5 @@
+# https://metacpan.org/pod/Test::ConsistentVersion
+
 ## no critic qw( ErrorHandling::RequireCheckingReturnValueOfEval )
 ## no critic qw( Lax::RequireExplicitPackage::ExceptForPragmata )
 ## no critic qw( Modules::RequireExplicitPackage )
@@ -6,7 +8,7 @@
 
 BEGIN {
 
-  use Test::Most
+  use Test::Most;
 
   #plan skip_all => 'these tests are for testing by the author'
   plan skip_all => 'This is not working, fix when you have time'
