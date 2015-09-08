@@ -20,6 +20,6 @@ eval { require Test::EOF };
 plan skip_all => 'Test::EOF required for these tests'
   if $@;
 
-all_perl_files_ok( { minimum_newlines => 1, maximum_newlines => 4 } );
+Test::EOF::all_perl_files_ok( { minimum_newlines => 1, maximum_newlines => 4 } );
 
 done_testing();
