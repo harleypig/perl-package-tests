@@ -27,6 +27,18 @@ contents of the xt directory are authoritative, not this document.
 
 Check the individual files for details on what each test is checking for.
 
+I'm trying to follow the definitions from (The Lancaster
+Consensus)[https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md#environment-variables-for-testing-contexts]
+for different types of tests.
+
+* `AUTOMATED_TESTING`: if true, tests are being run by an automated testing facility and not as part of the installation of a module; CPAN smokers must set this to true; CPAN clients must not set this.
+* `NONINTERACTIVE_TESTING`: if true, tests should not attempt to interact with a user; output may not be seen and prompts will not be answered.
+* `EXTENDED_TESTING`: if true, the user or process running tests is willing to run optional tests that may take extra time or resources to complete.  Such tests must not include any development or QA tests.  Only tests of runtime functionality should be included.
+* `RELEASE_TESTING`: if true, tests are being run as part of a release QA process; CPAN clients must not set this variable.
+* `AUTHOR_TESTING`: if true, tests are being run as part of an author's personal development process; such tests may or may not be run prior to release.  CPAN clients must not set this variable.  Distribution packagers (ppm, deb, rpm, etc.) should not set this variable.
+
+These tests are not necessarily categorized according to these definitions. I'm working on fixing that.
+
 #### Author Tests
 Author tests should check documentation, formatting, spelling. Generally,
 tests for things that don't affect execution of the code.
