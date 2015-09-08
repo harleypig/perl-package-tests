@@ -31,17 +31,13 @@ I'm trying to follow the definitions from (The Lancaster
 Consensus)[https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md#environment-variables-for-testing-contexts]
 for different types of tests.
 
-* `AUTOMATED_TESTING`: if true, tests are being run by an automated testing facility and not as part of the installation of a module; CPAN smokers must set this to true; CPAN clients must not set this.
-* `NONINTERACTIVE_TESTING`: if true, tests should not attempt to interact with a user; output may not be seen and prompts will not be answered.
-* `EXTENDED_TESTING`: if true, the user or process running tests is willing to run optional tests that may take extra time or resources to complete.  Such tests must not include any development or QA tests.  Only tests of runtime functionality should be included.
-* `RELEASE_TESTING`: if true, tests are being run as part of a release QA process; CPAN clients must not set this variable.
-* `AUTHOR_TESTING`: if true, tests are being run as part of an author's personal development process; such tests may or may not be run prior to release.  CPAN clients must not set this variable.  Distribution packagers (ppm, deb, rpm, etc.) should not set this variable.
-
 These tests are not necessarily categorized according to these definitions. I'm working on fixing that.
 
 #### Author Tests
-Author tests should check documentation, formatting, spelling. Generally,
-tests for things that don't affect execution of the code.
+`AUTHOR_TESTING`: if true, tests are being run as part of an author's personal
+development process; such tests may or may not be run prior to release.  CPAN
+clients must not set this variable.  Distribution packagers (ppm, deb, rpm,
+etc.) should not set this variable.
 
 * [Check Dependencies](xt/author/checkdeps.t)
 * [Check for common spelling mistakes](xt/author/spelling_commonmistakes.t)
@@ -56,9 +52,9 @@ tests for things that don't affect execution of the code.
 * [POD Coverage](xt/author/pod_coverage.t)
 
 #### Release Tests
-Release tests should check for things that can effect run-time execution of
-the code, but that aren't usually caught with a simple syntax check. Best
-practices should also be checked here.
+
+`RELEASE_TESTING`: if true, tests are being run as part of a release QA
+process; CPAN clients must not set this variable.
 
 * [Were changes noted in the Changes file?](xt/release/check-changes.t)
 * [Is the manifest correct?](xt/release/check-manifest.t)
@@ -84,3 +80,19 @@ practices should also be checked here.
 * [Are all prerequisites installed and accounted for?](xt/release/prereq.t)
 * [Does this package has appropriate legal information?](xt/release/test-legal.t)
 * [Are there any variables that are unused?](xt/release/vars.t)
+
+#### Automated TEsts
+`AUTOMATED_TESTING`: if true, tests are being run by an automated testing
+facility and not as part of the installation of a module; CPAN smokers must
+set this to true; CPAN clients must not set this.
+
+#### Non-interactive Tests
+`NONINTERACTIVE_TESTING`: if true, tests should not attempt to interact with
+a user; output may not be seen and prompts will not be answered.
+
+#### Extended Tests
+`EXTENDED_TESTING`: if true, the user or process running tests is willing to
+run optional tests that may take extra time or resources to complete.  Such
+tests must not include any development or QA tests.  Only tests of runtime
+functionality should be included.
+
