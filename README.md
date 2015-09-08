@@ -27,8 +27,8 @@ contents of the xt directory are authoritative, not this document.
 
 Check the individual files for details on what each test is checking for.
 
-I'm trying to follow the definitions from (The Lancaster
-Consensus)[https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md#environment-variables-for-testing-contexts]
+I'm trying to follow the definitions from [The Lancaster
+Consensus](https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md#environment-variables-for-testing-contexts)
 for different types of tests.
 
 These tests are not necessarily categorized according to these definitions. I'm working on fixing that.
