@@ -81,7 +81,7 @@ process; CPAN clients must not set this variable.
 * [Does this package has appropriate legal information?](xt/release/test-legal.t)
 * [Are there any variables that are unused?](xt/release/vars.t)
 
-#### Automated TEsts
+#### Automated Tests
 `AUTOMATED_TESTING`: if true, tests are being run by an automated testing
 facility and not as part of the installation of a module; CPAN smokers must
 set this to true; CPAN clients must not set this.
